@@ -133,17 +133,40 @@
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     @media (max-width: 900px) {
-      nav { padding: 1.25rem 2rem; }
-      .nav-links { gap: 1.5rem; }
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-left { padding: 3rem 2rem; }
-      .hero-right { height: 60vw; padding: 1rem 2rem; }
-      .about, .booking { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 2rem; }
-      .sessions-grid, .sessions-grid-b, .testimonial-grid { grid-template-columns: 1fr; }
-      section { padding: 4rem 2rem; }
-      .portfolio-grid { grid-template-columns: repeat(6,1fr); grid-template-rows: 200px 160px; }
-      footer { flex-direction: column; text-align: center; padding: 2rem; }
-    }
+       nav { padding: 1rem 1.5rem; }
+  .nav-logo { font-size: 1rem; }
+  .nav-links { gap: 1rem; }
+  .nav-cta { display: none; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 2rem 1.5rem; }
+  .hero-right { display: none; }
+  .about { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem; }
+  .about-photo { max-width: 280px; margin: 0 auto; }
+  .portfolio { padding: 3rem 1.5rem; }
+  .portfolio-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 280px 280px 280px;
+  }
+  .pg-item:nth-child(1),
+  .pg-item:nth-child(2),
+  .pg-item:nth-child(3) { grid-column: span 1; }
+  .sessions { padding: 3rem 1.5rem; }
+  .sessions-grid { grid-template-columns: 1fr !important; }
+  .sessions-grid > div { grid-template-columns: 1fr !important; }
+  section { padding: 3rem 1.5rem; }
+  .booking { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem; }
+  footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+  .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+}
+
+@media (max-width: 900px) {
+  /* Mini session dates - stack to single column */
+  div[style*="grid-template-columns: 1fr 1fr"] {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
   </style>
 </head>
 <body>
